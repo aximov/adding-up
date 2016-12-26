@@ -29,15 +29,5 @@ rl.on('line', (lineString) => {
 });
 rl.resume();
 rl.on('close', () => {
-    for (let pair of map) {
-        const value = pair[1];
-        value.change = value.p15 / value.p10;
-    }
-    const rankingArray = Array.from(map).sort((p1, p2) => {
-        return p2[1].change - p1[1].change;
-    });
-    const rankingStrings = rankingArray.map((p) => {
-        return p[0] + ': ' + p[1].p10 + '=>' + p[1].p15 + ' 変化率:' + p[1].change;
-    });
-    console.log(rankingArray);
+    console.log(map);
 });
